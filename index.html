@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <canvas id="canvas" width="1280" height="720"></canvas>
+
+  <div id="info" class="modal">
+    <h1>openFTL <span id="name_version"></span></h1>
+
+    <p>openFTL is an <i>extremely</i> WIP open recreation of FTL
+(1 day old)
+
+not a decompile/etc, it is a recreation
+from scratch. (kinda like OpenTTD/etc)
+
+you need an ftl.dat file to try
+(it is where your FTL binary is),
+openFTL loads all of FTLs resources from it.
+
+implemented:
+  - reading .dat files
+  - reading .font files
+  - custom text rendering using .font's
+  - title screen
+  - options window
+
+next up?
+  - tooltips
+  - hangar/customize screen
+</p>
+  </div>
+
+  <div id="dat">
+    <div class="modal" id="pick_dat">
+      <h1>DAT FILE</h1>
+      <p>Pick your FTL .dat file</p>
+
+      <input type="file" id="file" accept=".dat">
+      <button onclick="navigator.clipboard.writeText('C:\\Program Files (x86)\\Steam\\steamapps\\common\\FTL Faster Than Light')">Copy Steam path</button>
+    </div>
+
+    <div class="modal" id="reading_dat">
+      <span id="reading_phase">Reading dat file...</span>
+      <pre id="reading_stats"></pre>
+      <progress id="reading"></progress>
+    </div>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
